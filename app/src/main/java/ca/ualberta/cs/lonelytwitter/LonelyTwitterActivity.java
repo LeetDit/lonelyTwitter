@@ -39,8 +39,6 @@ public class LonelyTwitterActivity extends Activity {
 
 			public void onClick(View v) {
 
-				ArrayList<Current_Mood> moods = new ArrayList<Current_Mood>();
-
 
 				Tweet tweet = new ImportantTweet("");
 				NormalTweet tweet1 = new NormalTweet("");

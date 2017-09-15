@@ -1,5 +1,6 @@
 package ca.ualberta.cs.lonelytwitter;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -7,6 +8,8 @@ import java.util.Date;
  */
 
 public abstract class Current_Mood {
+
+    ArrayList<Current_Mood> moods = new ArrayList<Current_Mood>();
 
     private Date date;
 
