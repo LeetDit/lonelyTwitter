@@ -10,7 +10,7 @@ import java.util.Date;
 public abstract class Current_Mood {
 
     ArrayList<Current_Mood> moods = new ArrayList<Current_Mood>();
-    
+
     private Date date;
 
     public Current_Mood(Date date){
