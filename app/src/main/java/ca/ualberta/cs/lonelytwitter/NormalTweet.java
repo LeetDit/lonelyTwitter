@@ -3,15 +3,29 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 /**
- * Created by heesoopark on 2017-09-14.
+ * Represents a Tweet
+ *
+ * @author Hee Soo Park
+ * @version 1.0
+ * @since 1.0
  */
-
 public class NormalTweet extends Tweet {
 
+    /**
+     * sets message
+     *
+     * @param message
+     */
     public NormalTweet(String message) {
         super(message);
     }
 
+    /**
+     * sets message and date
+     *
+     * @param message
+     * @param date
+     */
     public NormalTweet(String message, Date date) {
         super(message, date);
     }
