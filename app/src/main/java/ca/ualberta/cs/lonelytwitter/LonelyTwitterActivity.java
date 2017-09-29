@@ -30,6 +30,7 @@ import com.google.gson.reflect.TypeToken;
  * @author Hee Soo Park
  * @version 1.0
  * @see Activity
+ * @see Tweet
  * @since 1.0
  */
 
