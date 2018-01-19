@@ -11,6 +11,7 @@ public abstract class Emotions {
     private String message;
     private Date date;
 
+
     public Date getDate()
     {
         return date;
@@ -19,6 +20,11 @@ public abstract class Emotions {
     public void setDate(Date date)
     {
         this.date = date;
+    }
+
+    public String getMessage()
+    {
+        return this.message;
     }
 
     public Emotions(String message)

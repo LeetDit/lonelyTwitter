@@ -14,6 +14,8 @@ import java.util.*;
 public abstract class Tweet implements Tweetable {
     private String message;
     private Date date;
+    ArrayList<Emotions> obj;
+
 
     public Tweet(String message) {
         this.message = message;
@@ -47,12 +49,7 @@ public abstract class Tweet implements Tweetable {
 
     public abstract Boolean isImportant();
 
-    public static void mylist() {
-        ArrayList<String> obj = new ArrayList<String>();
-
-	  /*This is how elements should be added to the array list*/
-        obj.add("Emotion");
-        obj.add("Sad");
-        obj.add("Mad");
+    public void addMood(Emotions emotion) {
+        obj.add(emotion);
     }
 }

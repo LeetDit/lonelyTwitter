@@ -7,8 +7,8 @@ import java.util.Date;
  */
 
 public class Mad extends Emotions{
-    public Mad (String message)
+    public Mad ()
     {
-        super(message);
+        super("mad");
     }
 }
