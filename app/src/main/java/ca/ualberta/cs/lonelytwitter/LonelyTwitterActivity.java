@@ -26,6 +26,9 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import io.searchbox.core.Search;
+import io.searchbox.core.SearchResult;
+
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "file.sav";
@@ -66,8 +69,18 @@ public class LonelyTwitterActivity extends Activity {
 
 			public void onClick(View v) {
 				setResult(RESULT_OK);
-				tweetList.clear();
-				deleteFile(FILENAME);  // TODO deprecate this button
+
+				String query = ("{ \"query\": { \"term\" : { \"message\" : \""+ bodyText +"\" } } }");
+
+
+				//SearchResult result = client.execute(search);
+
+				ElasticsearchTweetController.SearchTweetTask addTweetsTask =
+						new ElasticsearchTweetController.SearchTweetTask();
+				addTweetsTask.execute(query);
+
+				//tweetList.clear();
+				//deleteFile(FILENAME);  // TODO deprecate this button
 				adapter.notifyDataSetChanged();
 			}
 		});

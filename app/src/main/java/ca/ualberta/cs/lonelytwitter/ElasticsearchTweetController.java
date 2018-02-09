@@ -79,6 +79,35 @@ public class ElasticsearchTweetController {
             return tweets;
         }
     }
+    public static class SearchTweetTask extends AsyncTask<String, Void, ArrayList<NormalTweet>> {
+        @Override
+        protected ArrayList<NormalTweet> doInBackground(String... search_parameters) {
+            verifySettings();
+
+            ArrayList<NormalTweet> tweets = new ArrayList<NormalTweet>();
+
+            // TODO Build the query
+            Search search = new Search.Builder(search_parameters[0])
+                    .addIndex("testing").addType("Tweet").build();
+
+            try {
+                // TODO get the results of the query
+                SearchResult result = client.execute(search);
+                if (result.isSucceeded()) {
+                    List<NormalTweet> foundTweets = result.getSourceAsObjectList(NormalTweet.class);
+                    tweets.addAll(foundTweets);
+                }else {
+                    Log.i("Error", "Search query failed to find any thing");
+                }
+
+            }
+            catch (Exception e) {
+                Log.i("Error", "Something went wrong when we tried to communicate with the elasticsearch server!");
+            }
+
+            return tweets;
+        }
+    }
 
 
 
